@@ -4,5 +4,6 @@ inhibit_all_warnings!
 target "WTDemo" do
     #基础组件
     pod 'WTBaseCore', :git => "https://github.com/aliang124/WTBaseCore.git"
+    pod 'WTPagerController', :git => "https://github.com/aliang124/WTPagerController.git"
 end
 

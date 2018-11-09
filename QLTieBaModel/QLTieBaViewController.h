@@ -7,7 +7,7 @@
 //
 
 #import "WTBaseCore.h"
-
-@interface QLTieBaViewController : WTFormViewController
+#import "WTTabPagerController.h"
+@interface QLTieBaViewController : WTTabPagerController
 
 @end
