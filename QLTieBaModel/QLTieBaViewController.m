@@ -25,8 +25,11 @@
 }
 
 - (void)setTabBarView {
-    self.tabBarHeight = 50;
-    self.tabBarOrignY = WT_NavBar_Height;
+    self.tabBar.backgroundColor = WT_Color_BlueColor;
+    self.tabBar.progressView.backgroundColor = [UIColor orangeColor];
+    self.tabBarHeight = 32;
+    self.tabBar.layout.selectedTextColor = [UIColor blackColor];
+    self.tabBarOrignY = self.navBar.statusBarHeight + self.navBar.navBarTitleHeight;
     self.tabBar.layout.barStyle = WTPagerBarStyleProgressView;
     self.tabBar.layout.cellSpacing = 0;
     self.tabBar.layout.cellEdging = 0;
