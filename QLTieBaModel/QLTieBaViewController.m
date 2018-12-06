@@ -39,7 +39,7 @@
     self.tabBar.layout.adjustContentCellsCenter = YES;
     self.dataSource = self;
     self.delegate = self;
-    self.pagerController.view.frame = CGRectMake(0, self.tabBarOrignY+self.tabBarHeight, WTScreenWidth, WTScreenHeight - self.tabBarOrignY - self.tabBarHeight - WT_TabBar_Height);
+    self.pagerController.view.frame = CGRectMake(0, 0, WTScreenWidth, WTScreenHeight - self.tabBarOrignY - self.tabBarHeight - WT_TabBar_Height);
     
     [self loadData];
 }
@@ -60,7 +60,6 @@
 
 - (UIViewController *)tabPagerController:(WTTabPagerController *)tabPagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
     QLSubTieBaViewController *VC = [[QLSubTieBaViewController alloc]init];
-    VC.view.backgroundColor = [UIColor redColor];
     return VC;
 }
 

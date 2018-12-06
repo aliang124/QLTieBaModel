@@ -7,12 +7,15 @@
 //
 
 #import "QLSubTieBaViewController.h"
+#import "QLTieBaCell.h"
 
 @implementation QLSubTieBaViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.hidden = YES;
-    self.formManager[@"WTIconTextItem"] = @"WTIconTextCell";
+    self.formManager[@"QLTieBaItem"] = @"QLTieBaCell";
+    self.formTable.top = 0;
+    self.formTable.height = WTScreenHeight-WT_NavBar_Height-32-WT_TabBar_Height;
     [self initForm];
 }
 
@@ -20,7 +23,18 @@
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
     
-    
+    for (int i = 0; i < 10; i++) {
+        WTEmptyItem *itE = [[WTEmptyItem alloc] init];
+        itE.cellHeight = 8;
+        [section0 addItem:itE];
+        
+        QLTieBaItem *it = [[QLTieBaItem alloc] init];
+        [section0 addItem:it];
+    }
+    WTEmptyItem *itE = [[WTEmptyItem alloc] init];
+    itE.cellHeight = 8;
+    [section0 addItem:itE];
+
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     
