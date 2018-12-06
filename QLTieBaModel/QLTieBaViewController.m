@@ -27,9 +27,11 @@
 
 - (void)setTabBarView {
     self.tabBar.backgroundColor = QL_NavBar_BgColor_Yellow;
-    self.tabBar.progressView.backgroundColor = [UIColor orangeColor];
+    self.tabBar.progressView.backgroundColor = QL_NavBar_CursorColor_Black;
     self.tabBarHeight = 32;
-    self.tabBar.layout.selectedTextColor = [UIColor blackColor];
+    self.tabBar.layout.normalTextFont = [UIFont systemFontOfSize:14];
+    self.tabBar.layout.selectedTextFont = [UIFont boldSystemFontOfSize:16];
+    self.tabBar.layout.selectedTextColor = QL_NavBar_TitleColor_Black;
     self.tabBarOrignY = self.navBar.statusBarHeight + self.navBar.navBarTitleHeight;
     self.tabBar.layout.barStyle = WTPagerBarStyleProgressView;
     self.tabBar.layout.cellSpacing = 0;
