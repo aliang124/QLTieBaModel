@@ -26,7 +26,7 @@
 }
 
 - (void)setTabBarView {
-    self.tabBar.backgroundColor = WT_Color_BlueColor;
+    self.tabBar.backgroundColor = QL_NavBar_BgColor_Yellow;
     self.tabBar.progressView.backgroundColor = [UIColor orangeColor];
     self.tabBarHeight = 32;
     self.tabBar.layout.selectedTextColor = [UIColor blackColor];
