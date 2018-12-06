@@ -23,9 +23,12 @@
 
 @interface QLTieBaCell()
 {
-    //上面用户信息
+    //背景view
     UIButton *bgView;
+    //上面用户信息
     UIImageView *iconImg;
+    UILabel *userNameLab;
+    UIButton *guanBtn;//关注按钮
     //标题描述信息
     UILabel *titleLab;
     UILabel *descLab;
@@ -52,6 +55,20 @@
     iconImg.layer.cornerRadius = 15;
     iconImg.layer.masksToBounds = YES;
     [bgView addSubview:iconImg];
+    
+    userNameLab = [[UILabel alloc] initWithFrame:CGRectMake(iconImg.right+7, iconImg.top, bgView.width-iconImg.right-7-15, 30)];
+    userNameLab.font = WTFontSys(12);
+    userNameLab.textColor = QL_NavBar_TitleColor_Black;
+    [bgView addSubview:userNameLab];
+    
+    guanBtn = [[UIButton alloc] initWithFrame:CGRectMake(bgView.width-56-12, 12, 56, 24)];
+    guanBtn.layer.borderColor = WTColorHex(0xDBDBDB).CGColor;
+    [guanBtn setTitle:@"+ 关注" forState:UIControlStateNormal];
+    guanBtn.layer.borderWidth = 0.5;
+    guanBtn.layer.masksToBounds = YES;
+    guanBtn.titleLabel.font = WTFontSys(12);
+    [guanBtn setTitleColor:QL_UserName_TitleColor_Black forState:UIControlStateNormal];
+    [bgView addSubview:guanBtn];
     
     UIImageView *lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(13, 49.5, bgView.width-13-15, WT_Line_Height)];
     lineImg.backgroundColor = QL_TableView_LineColor;
@@ -93,6 +110,8 @@
     [super cellWillAppear];
     self.backgroundColor = WT_Color_ViewBackGround;
     self.contentView.backgroundColor = WT_Color_ViewBackGround;
+    //
+    userNameLab.text = @"用户A";
     //标题自适应高度缓存
     NSString *titleText = @"爸妈做到这5点，宝宝将来不愁大长腿！";
     if (self.item.titleTextHeight==5) {
