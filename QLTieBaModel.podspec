@@ -15,4 +15,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/aliang124/QLTieBaModel.git", :tag => "#{s.version}" }
   s.source_files  = "QLTieBaModel/*.{h,m}"
 
+  s.subspec 'Cell' do |ss|
+  ss.source_files = 'QLTieBaModel/Cell/**/*.{h,m,c,mm}'
+  end
+
+
 end
