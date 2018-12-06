@@ -62,7 +62,7 @@
     [bgView addSubview:userNameLab];
     
     guanBtn = [[UIButton alloc] initWithFrame:CGRectMake(bgView.width-56-12, 12, 56, 24)];
-    guanBtn.layer.borderColor = WTColorHex(0xDBDBDB).CGColor;
+    guanBtn.layer.borderColor = QL_Border_LineColor.CGColor;
     [guanBtn setTitle:@"+ 关注" forState:UIControlStateNormal];
     guanBtn.layer.borderWidth = 0.5;
     guanBtn.layer.masksToBounds = YES;
