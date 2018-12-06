@@ -7,6 +7,7 @@
 //
 #import "QLTieBaCell.h"
 #import "WTBaseCore.h"
+#import "QLBusiness.h"
 
 @implementation QLTieBaItem
 - (id)init{

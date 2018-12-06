@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTBaseCore.h"
 
 @interface AppDelegate : WTAppDelegate <UIApplicationDelegate>
 

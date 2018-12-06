@@ -8,6 +8,9 @@
 
 #import "QLTieBaViewController.h"
 #import "QLSubTieBaViewController.h"
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
+
 @interface QLTieBaViewController ()<WTTabPagerControllerDataSource,WTTabPagerControllerDelegate>
 @property (nonatomic, strong) NSArray *datas;
 @end

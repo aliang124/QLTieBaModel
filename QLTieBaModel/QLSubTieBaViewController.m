@@ -8,6 +8,8 @@
 
 #import "QLSubTieBaViewController.h"
 #import "QLTieBaCell.h"
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
 
 @implementation QLSubTieBaViewController
 - (void)viewDidLoad {
