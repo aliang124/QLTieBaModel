@@ -7,6 +7,7 @@
 //
 
 #import "QLTieBaViewController.h"
+#import "QLSubTieBaViewController.h"
 @interface QLTieBaViewController ()<WTTabPagerControllerDataSource,WTTabPagerControllerDelegate>
 @property (nonatomic, strong) NSArray *datas;
 @end
@@ -47,7 +48,6 @@
         [datas addObject:i%2 == 0 ? [NSString stringWithFormat:@"Tab %ld",i]:[NSString stringWithFormat:@"Tab Tab %ld",i]];
     }
     _datas = [datas copy];
-//    [self scrollToControllerAtIndex:1 animate:YES];
     [self reloadData];
 }
 
@@ -57,19 +57,9 @@
 }
 
 - (UIViewController *)tabPagerController:(WTTabPagerController *)tabPagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
-    if (index%3 == 0) {
-        UIViewController *VC = [[UIViewController alloc]init];
-        VC.view.backgroundColor = [UIColor redColor];
-        return VC;
-    }else if (index%3 == 1) {
-        UIViewController *VC = [[UIViewController alloc]init];
-        VC.view.backgroundColor = [UIColor blueColor];
-        return VC;
-    }else {
-        UIViewController *VC = [[UIViewController alloc]init];
-        VC.view.backgroundColor = [UIColor purpleColor];
-        return VC;
-    }
+    QLSubTieBaViewController *VC = [[QLSubTieBaViewController alloc]init];
+    VC.view.backgroundColor = [UIColor redColor];
+    return VC;
 }
 
 - (NSString *)tabPagerController:(WTTabPagerController *)tabPagerController titleForIndex:(NSInteger)index {

@@ -1,6 +1,15 @@
 PODS:
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (5.0.8)
+  - QLBusiness (0.0.1):
+    - QLBusiness/Cell (= 0.0.1)
+    - QLBusiness/Model (= 0.0.1)
+    - QLBusiness/Request (= 0.0.1)
+    - QLBusiness/View (= 0.0.1)
+  - QLBusiness/Cell (0.0.1)
+  - QLBusiness/Model (0.0.1)
+  - QLBusiness/Request (0.0.1)
+  - QLBusiness/View (0.0.1)
   - WTBaseCore (0.0.1):
     - FDFullscreenPopGesture (~> 1.1)
     - IQKeyboardManager (~> 5.0.7)
@@ -47,16 +56,22 @@ PODS:
   - WTPagerController (0.0.1)
 
 DEPENDENCIES:
+  - QLBusiness (from `https://github.com/aliang124/QLBusiness.git`)
   - WTBaseCore (from `https://github.com/jienliang000/WTBaseCore.git`)
   - WTPagerController (from `https://github.com/jienliang000/WTPagerController.git`)
 
 EXTERNAL SOURCES:
+  QLBusiness:
+    :git: https://github.com/aliang124/QLBusiness.git
   WTBaseCore:
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTPagerController:
     :git: https://github.com/jienliang000/WTPagerController.git
 
 CHECKOUT OPTIONS:
+  QLBusiness:
+    :commit: 7042d1367ce1fba5b31eb2ae74e3287b13bd7990
+    :git: https://github.com/aliang124/QLBusiness.git
   WTBaseCore:
     :commit: bd91b9653505c82de19127edb17898e4bac09ba4
     :git: https://github.com/jienliang000/WTBaseCore.git
@@ -67,9 +82,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
+  QLBusiness: 65cf398bbc46a7ab97c8c09cc48050dcb42eecae
   WTBaseCore: c46847e84d6a933554f3bed7ea1a94ed729131b3
   WTPagerController: 77388a87329eb5a9f48707f3e9830a4516732208
 
-PODFILE CHECKSUM: 2bb476af5544552d60d984fa872c119c54432b41
+PODFILE CHECKSUM: 98bce04cd87ec2102cd94b247f1fa97e9b915bbf
 
 COCOAPODS: 1.4.0
