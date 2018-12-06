@@ -26,6 +26,7 @@
     for (int i = 0; i < 10; i++) {
         WTEmptyItem *itE = [[WTEmptyItem alloc] init];
         itE.cellHeight = 8;
+        itE.bgColor = WT_Color_ViewBackGround;
         [section0 addItem:itE];
         
         QLTieBaItem *it = [[QLTieBaItem alloc] init];
@@ -33,6 +34,7 @@
     }
     WTEmptyItem *itE = [[WTEmptyItem alloc] init];
     itE.cellHeight = 8;
+    itE.bgColor = WT_Color_ViewBackGround;
     [section0 addItem:itE];
 
     [sectionArray addObject:section0];

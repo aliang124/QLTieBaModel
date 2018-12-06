@@ -12,6 +12,12 @@
 @property (nonatomic,copy) NSString *userName;//用户名
 @property (nonatomic,copy) NSString *titleText;//标题
 @property (nonatomic,copy) NSString *descText;//标题说明
+
+
+//缓存标题高度
+@property (nonatomic,assign) float titleTextHeight;
+//缓存说明高度
+@property (nonatomic,assign) float descTextHeight;
 @end
 
 @interface QLTieBaCell : WTBaseCell
