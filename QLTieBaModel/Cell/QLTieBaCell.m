@@ -26,9 +26,13 @@
     //上面用户信息
     UIButton *bgView;
     UIImageView *iconImg;
-    
+    //标题描述信息
     UILabel *titleLab;
     UILabel *descLab;
+    //图片
+    UIImageView *netImg1;
+    UIImageView *netImg2;
+    UIImageView *netImg3;
 }
 @end
 
@@ -65,6 +69,20 @@
     descLab.textColor = QL_DescColor_Gray;
     [bgView addSubview:descLab];
     //图片区域
+    float width = (bgView.width-12-12-10-10)/3;
+    float height = width * 0.92;
+    
+    netImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(12, descLab.bottom+7, width, height)];
+    netImg1.backgroundColor = [UIColor redColor];
+    [bgView addSubview:netImg1];
+
+    netImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(netImg1.right+10, netImg1.top, width, height)];
+    netImg2.backgroundColor = [UIColor redColor];
+    [bgView addSubview:netImg2];
+
+    netImg3 = [[UIImageView alloc] initWithFrame:CGRectMake(netImg2.right+10, netImg1.top, width, height)];
+    netImg3.backgroundColor = [UIColor redColor];
+    [bgView addSubview:netImg3];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -94,8 +112,12 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    bgView.height = self.height;
     descLab.top = titleLab.bottom+7;
+    netImg1.top = descLab.bottom+7;
+    netImg2.top = descLab.bottom+7;
+    netImg3.top = descLab.bottom+7;
+    bgView.height = netImg1.bottom+32;
+    self.item.cellHeight = bgView.height;
 }
 
 - (float)getTextHeight:(NSString *)title font:(UIFont *)font {
