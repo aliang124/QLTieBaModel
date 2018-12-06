@@ -112,25 +112,20 @@
     self.contentView.backgroundColor = WT_Color_ViewBackGround;
     //
     userNameLab.text = @"用户A";
+    titleLab.text = @"爸妈做到这5点，宝宝将来不愁大长腿！";
+    descLab.text = @"青春期是长高的一个黄金期，爸妈都知道，小南就略过不提。重点说说爸妈可能忽略的“3岁前”吧。先说说宝宝身高增长的";
+
     //标题自适应高度缓存
-    NSString *titleText = @"爸妈做到这5点，宝宝将来不愁大长腿！";
     if (self.item.titleTextHeight==5) {
-        titleLab.height = [self getTextHeight:titleText font:WTFontSys(14)];
+        [titleLab sizeToFit];
         self.item.titleTextHeight = titleLab.height;
     }
-    titleLab.text = titleText;
     //描述自适应高度缓存
-    NSString *descText = @"青春期是长高的一个黄金期，爸妈都知道，小南就略过不提。重点说说爸妈可能忽略的“3岁前”吧。先说说宝宝身高增长的";
     if (self.item.descTextHeight==5) {
-        descLab.height = [self getTextHeight:descText font:WTFontSys(12)];
+        [descLab sizeToFit];
         self.item.descTextHeight = descLab.height;
     }
-    descLab.text = descText;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
+    
     descLab.top = titleLab.bottom+7;
     netImg1.top = descLab.bottom+7;
     netImg2.top = descLab.bottom+7;
@@ -139,12 +134,8 @@
     self.item.cellHeight = bgView.height;
 }
 
-- (float)getTextHeight:(NSString *)title font:(UIFont *)font {
-    UILabel *tLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, bgView.width-12-15, 10)];
-    tLab.font = font;
-    tLab.numberOfLines = 2;
-    tLab.text = title;
-    [tLab sizeToFit];
-    return tLab.height;
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
 }
 @end
