@@ -10,6 +10,7 @@
 #import "QLSubTieBaViewController.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "QLMerchantListViewController.h"
 
 @interface QLTieBaViewController ()<WTTabPagerControllerDataSource,WTTabPagerControllerDelegate>
 @property (nonatomic, strong) NSArray *datas;
@@ -20,6 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.leftItemList = [NSArray array];
+    WT(bself);
+    WTCustomBarItem *searchIt = [[WTCustomBarItem alloc] init];
+    searchIt.itemStyle = 1;
+    searchIt.itemImage = [UIImage imageNamed:@"WTBaseCore.bundle/back"];
+    searchIt.imgSize = CGSizeMake(23, 23);
+    searchIt.onClick = ^(void) {
+        QLMerchantListViewController *list = [[QLMerchantListViewController alloc] init];
+        [bself.navigationController pushViewController:list animated:YES];
+    };
+    self.navBar.rightItemList = [NSArray arrayWithObject:searchIt];
+    [self.navBar setNeedsLayout];
+
     [self setControllerTitle];
     [self setTabBarView];
 }

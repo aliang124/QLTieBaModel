@@ -15,7 +15,7 @@
 /**
  *     @brief     实际操作title区域和按钮区域高度
  */
-#define WT_NavBar_Title_Height 44
+#define WT_NavBar_Title_Height 48
 /**
  *     @brief     总高度
  */

@@ -10,6 +10,7 @@
 		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
 		500F8DF521B8B4E400450A19 /* QLSubTieBaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F8DF421B8B4E400450A19 /* QLSubTieBaViewController.m */; };
 		500F8DF921B8BE3100450A19 /* QLTieBaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F8DF821B8BE3000450A19 /* QLTieBaCell.m */; };
+		50181A4E21BA178000090951 /* QLMerchantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50181A4D21BA178000090951 /* QLMerchantListViewController.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -22,6 +23,8 @@
 		500F8DF421B8B4E400450A19 /* QLSubTieBaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLSubTieBaViewController.m; sourceTree = "<group>"; };
 		500F8DF721B8BE3000450A19 /* QLTieBaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLTieBaCell.h; sourceTree = "<group>"; };
 		500F8DF821B8BE3000450A19 /* QLTieBaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLTieBaCell.m; sourceTree = "<group>"; };
+		50181A4C21BA178000090951 /* QLMerchantListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLMerchantListViewController.h; sourceTree = "<group>"; };
+		50181A4D21BA178000090951 /* QLMerchantListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLMerchantListViewController.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				50DADCFC2192868400DA8BFE /* QLTieBaViewController.m */,
 				500F8DF321B8B4E400450A19 /* QLSubTieBaViewController.h */,
 				500F8DF421B8B4E400450A19 /* QLSubTieBaViewController.m */,
+				50181A4C21BA178000090951 /* QLMerchantListViewController.h */,
+				50181A4D21BA178000090951 /* QLMerchantListViewController.m */,
 			);
 			name = QLTieBaModel;
 			path = ../../QLTieBaModel;
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500F8DF921B8BE3100450A19 /* QLTieBaCell.m in Sources */,
+				50181A4E21BA178000090951 /* QLMerchantListViewController.m in Sources */,
 				500F8DF521B8B4E400450A19 /* QLSubTieBaViewController.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
 				50DADCFD2192868400DA8BFE /* QLTieBaViewController.m in Sources */,
