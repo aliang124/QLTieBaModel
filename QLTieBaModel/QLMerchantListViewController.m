@@ -9,14 +9,16 @@
 #import "QLMerchantListViewController.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "QLMerchantListCell.h"
+
 @implementation QLMerchantListViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.title = @"商家列表";
     
     self.formTable.top = 44 + WT_NavBar_Height;
-    self.formTable.height = WTScreenHeight-WT_NavBar_Height-44-WT_TabBar_Height;
-    
+    self.formTable.height = WTScreenHeight-WT_NavBar_Height-44;
+    self.formManager[@"QLMerchantListItem"] = @"QLMerchantListCell";
     [self initForm];
 }
 
@@ -25,6 +27,8 @@
     RETableViewSection *section0 = [RETableViewSection section];
     
     for (int i = 0; i < 210; i++) {
+        QLMerchantListItem *it = [[QLMerchantListItem alloc] init];
+        [section0 addItem:it];
     }
     
     WTEmptyItem *itE = [[WTEmptyItem alloc] init];
