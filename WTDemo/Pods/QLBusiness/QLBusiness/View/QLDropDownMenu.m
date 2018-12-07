@@ -10,7 +10,7 @@
 
 #define BackColor [UIColor whiteColor]
 // 选中颜色加深
-#define SelectColor [UIColor colorWithRed:238.0f/255.0f green:238.0f/255.0f blue:238.0f/255.0f alpha:1.0]
+#define SelectColor [UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1.0]
 
 @interface NSString (Size)
 
@@ -47,7 +47,6 @@
 @end
 
 @interface QLCollectionViewCell:UICollectionViewCell
-
 @property(nonatomic,strong) UILabel *textLabel;
 @property(nonatomic,strong) UIImageView *accessoryView;
 
@@ -69,20 +68,14 @@
 }
 
 -(void)setAccessoryView:(UIImageView *)accessoryView{
-    
     [self removeAccessoryView];
-    
     _accessoryView = accessoryView;
-    
     _accessoryView.frame = CGRectMake(self.frame.size.width-10-16, (self.frame.size.height-12)/2, 16, 12);
-    
     [self addSubview:_accessoryView];
 }
 
 -(void)removeAccessoryView{
-    
     if(_accessoryView){
-        
         [_accessoryView removeFromSuperview];
     }
 }
@@ -92,12 +85,8 @@
 
 
 @interface QLTableViewCell : UITableViewCell
-
 @property(nonatomic,readonly) UILabel *cellTextLabel;
-@property(nonatomic,strong) UIImageView *cellAccessoryView;
-
--(void)setCellText:(NSString *)text align:(NSString*)align;
-
+- (void)setCellText:(NSString *)text align:(NSString*)align;
 @end
 
 @implementation QLTableViewCell
@@ -106,7 +95,6 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
         _cellTextLabel = [[UILabel alloc] init];
         _cellTextLabel.textAlignment = NSTextAlignmentCenter;
         _cellTextLabel.font = [UIFont systemFontOfSize:14.0f];
@@ -116,38 +104,15 @@
 }
 
 -(void)setCellText:(NSString *)text align:(NSString*)align{
-    
     _cellTextLabel.text = text;
     // 只取宽度
     CGSize textSize = [text textSizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(MAXFLOAT, 14) lineBreakMode:NSLineBreakByWordWrapping];
-//    CGSize textSize = [text sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(MAXFLOAT, 14)];
-    
     CGFloat marginX = 20;
-    
     if (![@"left" isEqualToString:align]) {
         marginX = (self.frame.size.width-textSize.width)/2;
     }
-    
     _cellTextLabel.frame = CGRectMake(marginX, 0, textSize.width, self.frame.size.height);
-    
-    if(_cellAccessoryView){
-        _cellAccessoryView.frame = CGRectMake(_cellTextLabel.frame.origin.x+_cellTextLabel.frame.size.width+10, (self.frame.size.height-12)/2, 16, 12);
-    }
 }
-
--(void)setCellAccessoryView:(UIImageView *)accessoryView{
-    
-    if (_cellAccessoryView) {
-        [_cellAccessoryView removeFromSuperview];
-    }
-    
-    _cellAccessoryView = accessoryView;
-    
-    _cellAccessoryView.frame = CGRectMake(_cellTextLabel.frame.origin.x+_cellTextLabel.frame.size.width+10, (self.frame.size.height-12)/2, 16, 12);
-    
-    [self addSubview:_cellAccessoryView];
-}
-
 @end
 
 @implementation QLIndexPath
@@ -258,16 +223,15 @@
         [self.layer addSublayer:indicator];
         [tempIndicators addObject:indicator];
         
-        //separator
+        //中间分隔线separator
          if (i != _numOfMenu - 1) {
              CGPoint separatorPosition = CGPointMake((i + 1) * separatorLineInterval, self.frame.size.height/2);
              CAShapeLayer *separator = [self createSeparatorLineWithColor:self.separatorColor andPosition:separatorPosition];
              [self.layer addSublayer:separator];
          }
     }
-    
+    //底部分隔线
     _bottomShadow.backgroundColor = self.separatorColor;
-    
     _titles = [tempTitles copy];
     _indicators = [tempIndicators copy];
     _bgLayers = [tempBgLayers copy];
@@ -286,14 +250,14 @@
         
         //tableView init
         _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, 0, 0) style:UITableViewStyleGrouped];
-        _leftTableView.rowHeight = 38;
-        _leftTableView.separatorColor = [UIColor colorWithRed:220.f/255.0f green:220.f/255.0f blue:220.f/255.0f alpha:1.0];
+        _leftTableView.rowHeight = height;
+        _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _leftTableView.dataSource = self;
         _leftTableView.delegate = self;
         
         _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.frame.size.width, self.frame.origin.y + self.frame.size.height, 0, 0) style:UITableViewStyleGrouped];
-        _rightTableView.rowHeight = 38;
-        _rightTableView.separatorColor = [UIColor colorWithRed:220.f/255.0f green:220.f/255.0f blue:220.f/255.0f alpha:1.0];
+        _rightTableView.rowHeight = height;
+        _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rightTableView.dataSource = self;
         _rightTableView.delegate = self;
         
@@ -302,7 +266,7 @@
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0) collectionViewLayout:flowLayout];
         
         [_collectionView registerClass:[QLCollectionViewCell class] forCellWithReuseIdentifier:@"CollectionCell"];
-        _collectionView.backgroundColor = [UIColor colorWithRed:220.f/255.0f green:220.f/255.0f blue:220.f/255.0f alpha:1.0];
+//        _collectionView.backgroundColor = [UIColor colorWithRed:220.f/255.0f green:220.f/255.0f blue:220.f/255.0f alpha:1.0];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         
@@ -770,47 +734,31 @@
         
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = BackColor;
-        
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.textColor = self.textColor;
     titleLabel.tag = 1;
     titleLabel.font = [UIFont systemFontOfSize:14.0];
-        
     [cell addSubview:titleLabel];
     
-    
     NSInteger leftOrRight = 0;
-    
     if (_rightTableView==tableView) {
-        
         leftOrRight = 1;
     }
-    
-//    UILabel *titleLabel = (UILabel*)[cell viewWithTag:1];
-    
     CGSize textSize;
     
     if ([self.dataSource respondsToSelector:@selector(menu:titleForRowAtIndexPath:)]) {
-        
         titleLabel.text = [self.dataSource menu:self titleForRowAtIndexPath:[QLIndexPath indexPathWithCol:self.currentSelectedMenudIndex leftOrRight:leftOrRight leftRow:_leftSelectedRow row:indexPath.row]];
         // 只取宽度
         textSize = [titleLabel.text textSizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(MAXFLOAT, 14) lineBreakMode:NSLineBreakByWordWrapping];
-        
     }
-    
     cell.backgroundColor = [UIColor whiteColor];
     cell.textLabel.font = [UIFont systemFontOfSize:14.0];
     cell.separatorInset = UIEdgeInsetsZero;
-    
-    
     if (leftOrRight == 1) {
-        
         CGFloat marginX = 20;
-        
         titleLabel.frame = CGRectMake(marginX, 0, textSize.width, cell.frame.size.height);
         //右边tableview
         cell.backgroundColor = BackColor;
-        
         if ([titleLabel.text isEqualToString:[(CATextLayer *)[_titles objectAtIndex:_currentSelectedMenudIndex] string]]) {
             
             UIImageView *accessoryImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_make"]];
@@ -819,38 +767,27 @@
             
             [cell addSubview:accessoryImageView];
         } else{
-            
-            
         }
-    } else{
-        
+    } else {
         CGFloat ratio = [_dataSource widthRatioOfLeftColumn:_currentSelectedMenudIndex];
-        
         CGFloat marginX = (self.frame.size.width*ratio-textSize.width)/2;
-        
         titleLabel.frame = CGRectMake(marginX, 0, textSize.width, cell.frame.size.height);
-        
         if (!_hadSelected && _leftSelectedRow == indexPath.row) {
             cell.backgroundColor = BackColor;
             BOOL haveRightTableView = [_dataSource haveRightTableViewInColumn:_currentSelectedMenudIndex];
             if(!haveRightTableView){
                 UIImageView *accessoryImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_make"]];
-                
                 accessoryImageView.frame = CGRectMake(titleLabel.frame.origin.x+titleLabel.frame.size.width+10, (self.frame.size.height-12)/2, 16, 12);
-                
                 [cell addSubview:accessoryImageView];
             }
-        } else{
-            
+        } else {
         }
     }
-    
     return cell;
 }
 
 #pragma mark - tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     NSInteger leftOrRight = 0;
     if (_rightTableView==tableView) {
         leftOrRight = 1;
@@ -859,9 +796,7 @@
     }
     
     if (self.delegate || [self.delegate respondsToSelector:@selector(menu:didSelectRowAtIndexPath:)]) {
-        
         BOOL haveRightTableView = [_dataSource haveRightTableViewInColumn:_currentSelectedMenudIndex];
-        
         if ((leftOrRight==0 && !haveRightTableView) || leftOrRight==1) {
             [self confiMenuWithSelectRow:indexPath.row leftOrRight:leftOrRight];
         }
@@ -879,9 +814,7 @@
             
             [_rightTableView reloadData];
         }
-        
     } else {
-        //TODO: delegate is nil
     }
 }
 

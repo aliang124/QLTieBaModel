@@ -36,8 +36,8 @@
     
     QLDropDownMenu *menu = [[QLDropDownMenu alloc] initWithOrigin:CGPointMake(0, WT_NavBar_Height) andHeight:44];
     menu.indicatorColor = [UIColor colorWithRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0];
-    menu.separatorColor = [UIColor colorWithRed:210.0f/255.0f green:210.0f/255.0f blue:210.0f/255.0f alpha:1.0];
-    menu.textColor = [UIColor colorWithRed:83.f/255.0f green:83.f/255.0f blue:83.f/255.0f alpha:1.0f];
+    menu.separatorColor = WT_Color_Line;
+    menu.textColor = QL_UserName_TitleColor_Black;
     menu.dataSource = self;
     menu.delegate = self;
     [self.view addSubview:menu];
