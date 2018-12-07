@@ -3,10 +3,12 @@ PODS:
   - IQKeyboardManager (5.0.8)
   - QLBusiness (0.0.1):
     - QLBusiness/Cell (= 0.0.1)
+    - QLBusiness/Controller (= 0.0.1)
     - QLBusiness/Model (= 0.0.1)
     - QLBusiness/Request (= 0.0.1)
     - QLBusiness/View (= 0.0.1)
   - QLBusiness/Cell (0.0.1)
+  - QLBusiness/Controller (0.0.1)
   - QLBusiness/Model (0.0.1)
   - QLBusiness/Request (0.0.1)
   - QLBusiness/View (0.0.1)
@@ -70,10 +72,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   QLBusiness:
-    :commit: 7a3f809a60596f2d8dfe2d56369d750bffb6b45a
+    :commit: 63187eed69ab40e810ca4dd65a4820d72012ba41
     :git: https://github.com/aliang124/QLBusiness.git
   WTBaseCore:
-    :commit: bd91b9653505c82de19127edb17898e4bac09ba4
+    :commit: 86ce2b64e74215c73088c611023a3d4a4762cb15
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTPagerController:
     :commit: 445fc81659f788bd92c3a61e5ffefe2f0a08561f
@@ -82,7 +84,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
-  QLBusiness: 65cf398bbc46a7ab97c8c09cc48050dcb42eecae
+  QLBusiness: cf65898ae78dcd54b6afa348601a1a76ddaac12b
   WTBaseCore: c46847e84d6a933554f3bed7ea1a94ed729131b3
   WTPagerController: 77388a87329eb5a9f48707f3e9830a4516732208
 
