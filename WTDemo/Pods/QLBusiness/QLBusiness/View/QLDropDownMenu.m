@@ -8,7 +8,7 @@
 
 #import "QLDropDownMenu.h"
 
-#define BackColor [UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1.0]
+#define BackColor [UIColor whiteColor]
 // 选中颜色加深
 #define SelectColor [UIColor colorWithRed:238.0f/255.0f green:238.0f/255.0f blue:238.0f/255.0f alpha:1.0]
 
