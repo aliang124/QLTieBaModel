@@ -42,9 +42,9 @@
     bgView = [[UIButton alloc] initWithFrame:CGRectMake(16, 0, WTScreenWidth-16-16, 76)];
     bgView.layer.cornerRadius = 3;
     bgView.layer.masksToBounds = YES;
-    bgView.backgroundColor = WTColorHex(0xE4E4DA);
+    bgView.backgroundColor = WTColorHex(0xFAFAF7);
     bgView.layer.borderWidth = 1;
-    bgView.layer.borderColor = WTColorHex(0xFAFAF7).CGColor;
+    bgView.layer.borderColor = WTColorHex(0xE4E4DA).CGColor;
     [self.contentView addSubview:bgView];
     
     iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 80, 60)];
