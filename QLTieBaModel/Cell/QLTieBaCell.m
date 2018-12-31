@@ -171,6 +171,7 @@
     tagLab.text = @"吃喝玩乐";
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
+    tagLab.height = tagLab.height + 4;
     //留言数
     liuYanCountLab.text = @"1212";
     liuYanCountLab.top = netImg1.bottom+9;

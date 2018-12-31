@@ -26,6 +26,7 @@
     UIImageView *iconImg;
     UILabel *nameLab;
     UILabel *moneyLab;
+    UILabel *tagLab;
 }
 @end
 
@@ -57,6 +58,13 @@
     moneyLab.font = WTFontSys(10);
     moneyLab.textColor = QL_DescColor_Gray;
     [bgView addSubview:moneyLab];
+    
+    tagLab = [[UILabel alloc] initWithFrame:CGRectMake(moneyLab.left, 0, 10, 14)];
+    tagLab.font = WTFontSys(10);
+    tagLab.textColor = QL_TagTextColor_Green;
+    tagLab.backgroundColor = WTColorHex(0xE5FBF7);
+    tagLab.textAlignment = NSTextAlignmentCenter;
+    [bgView addSubview:tagLab];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -67,6 +75,12 @@
     [super cellWillAppear];
     nameLab.text = [WTUtil strRelay:self.item.shopNameText];
     moneyLab.text = @"¥90/人";
+    
+    tagLab.top = moneyLab.bottom+5;
+    tagLab.text = @"西餐";
+    [tagLab sizeToFit];
+    tagLab.width = tagLab.width + 8;
+    tagLab.height = tagLab.height + 4;
 }
 
 - (void)layoutSubviews
