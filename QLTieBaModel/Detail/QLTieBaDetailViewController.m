@@ -8,7 +8,7 @@
 
 #import "QLTieBaDetailViewController.h"
 #import "QLTieBaTitleCell.h"
-
+#import "QLTieBaUserInfoCell.h"
 @interface QLTieBaDetailViewController ()
 
 @end
@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.formManager[@"QLTieBaTitleItem"] = @"QLTieBaTitleCell";
+    self.formManager[@"QLTieBaUserInfoItem"] = @"QLTieBaUserInfoCell";
     [self initForm];
 }
 
@@ -28,9 +29,13 @@
     RETableViewSection *section0 = [RETableViewSection section];
     
     [section0 addItem:[WTEmptyItem initWithHeight:18]];
+    
     QLTieBaTitleItem *itTitle = [[QLTieBaTitleItem alloc] init];
     itTitle.titleText = @"这一家店超推荐的店铺所有的衣服都 是亲子搭配，简直就是宝妈们的福音啊！";
     [section0 addItem:itTitle];
+    
+    QLTieBaUserInfoItem *itUserInfo = [[QLTieBaUserInfoItem alloc] init];
+    [section0 addItem:itUserInfo];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
