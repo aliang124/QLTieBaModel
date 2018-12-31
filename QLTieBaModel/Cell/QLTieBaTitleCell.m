@@ -13,7 +13,10 @@
 - (id)init{
     if (self = [super init]) {
         self.cellHeight = 0.01;
+        self.titleFont = WTFontBoldSys(16);
+        self.titleColor = QL_UserName_TitleColor_Black;
         self.hasBottomLine = NO;
+        self.rightOffset = 40;
         self.titleTextHeight = -1;
     }
     return self;
@@ -33,9 +36,7 @@
 {
     [super cellDidLoad];
     titleLab = [[UILabel alloc] initWithFrame:CGRectMake(16, 0, WTScreenWidth-16-40, 5)];
-    titleLab.font = WTFontBoldSys(16);
     titleLab.numberOfLines = 0;
-    titleLab.textColor = QL_UserName_TitleColor_Black;
     [self.contentView addSubview:titleLab];
 }
 
@@ -46,7 +47,11 @@
 {
     [super cellWillAppear];
     self.backgroundColor = [UIColor whiteColor];
+    titleLab.width = WTScreenWidth-16-self.item.rightOffset;
+    titleLab.font = self.item.titleFont;
+    titleLab.textColor = self.item.titleColor;
     titleLab.text = [WTUtil strRelay:self.item.titleText];
+    
     float H = 0.01;
     if (self.item.titleTextHeight==-1) {
         [titleLab sizeToFit];

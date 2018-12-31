@@ -89,7 +89,7 @@
     nameLab.text = [WTUtil strRelay:self.item.shopNameText];
     moneyLab.text = @"¥90/人";
     //下面的布局
-    tagLab.top = moneyLab.bottom+5;
+    tagLab.top = moneyLab.bottom+6;
     tagLab.text = @"西餐";
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
