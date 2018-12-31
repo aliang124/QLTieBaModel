@@ -37,6 +37,8 @@
     UIImageView *netImg1;
     UIImageView *netImg2;
     UIImageView *netImg3;
+    //底部
+    UILabel *tagLab;
 }
 @end
 
@@ -101,6 +103,13 @@
     netImg3 = [[UIImageView alloc] initWithFrame:CGRectMake(netImg2.right+10, netImg1.top, width, height)];
     netImg3.backgroundColor = [UIColor redColor];
     [bgView addSubview:netImg3];
+    //底部tagLab
+    tagLab = [[UILabel alloc] initWithFrame:CGRectMake(12, netImg1.bottom+6, 10, 14)];
+    tagLab.font = WTFontSys(10);
+    tagLab.textColor = QL_TagTextColor_Green;
+    tagLab.backgroundColor = WTColorHex(0xE5FBF7);
+    tagLab.textAlignment = NSTextAlignmentCenter;
+    [bgView addSubview:tagLab];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -132,6 +141,11 @@
     netImg2.top = descLab.bottom+7;
     netImg3.top = descLab.bottom+7;
     bgView.height = netImg1.bottom+32;
+    //
+    tagLab.top = netImg1.bottom+6;
+    tagLab.text = @"吃喝玩乐";
+    [tagLab sizeToFit];
+    tagLab.width = tagLab.width + 8;
     self.item.cellHeight = bgView.height;
 }
 
