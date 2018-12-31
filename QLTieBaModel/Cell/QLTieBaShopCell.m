@@ -22,11 +22,13 @@
 
 @interface QLTieBaShopCell()
 {
-    UIView *bgView;
+    UIButton *bgView;
     UIImageView *iconImg;
     UILabel *nameLab;
     UILabel *moneyLab;
     UILabel *tagLab;
+    UILabel *addressLab;
+    UILabel *distanceLab;
 }
 @end
 
@@ -37,7 +39,7 @@
     [super cellDidLoad];
     self.backgroundColor = [UIColor whiteColor];
 
-    bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 0, WTScreenWidth-16-16, 76)];
+    bgView = [[UIButton alloc] initWithFrame:CGRectMake(16, 0, WTScreenWidth-16-16, 76)];
     bgView.layer.cornerRadius = 3;
     bgView.layer.masksToBounds = YES;
     bgView.backgroundColor = WTColorHex(0xE4E4DA);
@@ -59,12 +61,23 @@
     moneyLab.textColor = QL_DescColor_Gray;
     [bgView addSubview:moneyLab];
     
+    //下面布局
     tagLab = [[UILabel alloc] initWithFrame:CGRectMake(moneyLab.left, 0, 10, 14)];
     tagLab.font = WTFontSys(10);
     tagLab.textColor = QL_TagTextColor_Green;
     tagLab.backgroundColor = WTColorHex(0xE5FBF7);
     tagLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:tagLab];
+
+    addressLab = [[UILabel alloc] initWithFrame:CGRectMake(nameLab.left, nameLab.bottom+11, nameLab.width, 9)];
+    addressLab.font = WTFontSys(10);
+    addressLab.textColor = QL_DescColor_Gray;
+    [bgView addSubview:addressLab];
+
+    distanceLab = [[UILabel alloc] initWithFrame:CGRectMake(nameLab.left, nameLab.bottom+11, nameLab.width, 9)];
+    distanceLab.font = WTFontSys(10);
+    distanceLab.textColor = QL_DescColor_Gray;
+    [bgView addSubview:distanceLab];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -75,12 +88,24 @@
     [super cellWillAppear];
     nameLab.text = [WTUtil strRelay:self.item.shopNameText];
     moneyLab.text = @"¥90/人";
-    
+    //下面的布局
     tagLab.top = moneyLab.bottom+5;
     tagLab.text = @"西餐";
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
     tagLab.height = tagLab.height + 4;
+    //
+    addressLab.left = tagLab.right+5;
+    addressLab.text = @"宁国路商业区";
+    [addressLab sizeToFit];
+    addressLab.height = tagLab.height;
+    addressLab.top = tagLab.top;
+    //
+    distanceLab.text = @"2.3km";
+    [distanceLab sizeToFit];
+    distanceLab.height = tagLab.height;
+    distanceLab.top = tagLab.top;
+    distanceLab.left = bgView.width-distanceLab.width-10;
 }
 
 - (void)layoutSubviews
