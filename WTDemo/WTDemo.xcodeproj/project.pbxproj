@@ -12,6 +12,7 @@
 		500F8DF921B8BE3100450A19 /* QLTieBaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F8DF821B8BE3000450A19 /* QLTieBaCell.m */; };
 		50181A4E21BA178000090951 /* QLMerchantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50181A4D21BA178000090951 /* QLMerchantListViewController.m */; };
 		50181A5121BA1EF800090951 /* QLMerchantListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50181A5021BA1EF800090951 /* QLMerchantListCell.m */; };
+		507900BC21DA38F100DF64EC /* QLTieBaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507900BB21DA38F100DF64EC /* QLTieBaDetailViewController.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -28,6 +29,8 @@
 		50181A4D21BA178000090951 /* QLMerchantListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLMerchantListViewController.m; sourceTree = "<group>"; };
 		50181A4F21BA1EF800090951 /* QLMerchantListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantListCell.h; sourceTree = "<group>"; };
 		50181A5021BA1EF800090951 /* QLMerchantListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantListCell.m; sourceTree = "<group>"; };
+		507900BA21DA38F100DF64EC /* QLTieBaDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLTieBaDetailViewController.h; sourceTree = "<group>"; };
+		507900BB21DA38F100DF64EC /* QLTieBaDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLTieBaDetailViewController.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +69,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		507900B921DA388900DF64EC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				507900BA21DA38F100DF64EC /* QLTieBaDetailViewController.h */,
+				507900BB21DA38F100DF64EC /* QLTieBaDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		50DADCD32192811A00DA8BFE = {
 			isa = PBXGroup;
 			children = (
@@ -102,13 +114,14 @@
 		50DADCFA2192868400DA8BFE /* QLTieBaModel */ = {
 			isa = PBXGroup;
 			children = (
-				500F8DF621B8BE3000450A19 /* Cell */,
 				50DADCFB2192868400DA8BFE /* QLTieBaViewController.h */,
 				50DADCFC2192868400DA8BFE /* QLTieBaViewController.m */,
 				500F8DF321B8B4E400450A19 /* QLSubTieBaViewController.h */,
 				500F8DF421B8B4E400450A19 /* QLSubTieBaViewController.m */,
+				507900B921DA388900DF64EC /* Detail */,
 				50181A4C21BA178000090951 /* QLMerchantListViewController.h */,
 				50181A4D21BA178000090951 /* QLMerchantListViewController.m */,
+				500F8DF621B8BE3000450A19 /* Cell */,
 			);
 			name = QLTieBaModel;
 			path = ../../QLTieBaModel;
@@ -265,6 +278,7 @@
 				50181A4E21BA178000090951 /* QLMerchantListViewController.m in Sources */,
 				500F8DF521B8B4E400450A19 /* QLSubTieBaViewController.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
+				507900BC21DA38F100DF64EC /* QLTieBaDetailViewController.m in Sources */,
 				50DADCFD2192868400DA8BFE /* QLTieBaViewController.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50181A5121BA1EF800090951 /* QLMerchantListCell.m in Sources */,
@@ -407,7 +421,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
 				INFOPLIST_FILE = WTDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,7 +441,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
 				INFOPLIST_FILE = WTDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

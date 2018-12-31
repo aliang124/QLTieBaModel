@@ -19,5 +19,8 @@ Pod::Spec.new do |s|
   ss.source_files = 'QLTieBaModel/Cell/**/*.{h,m,c,mm}'
   end
 
+  s.subspec 'Detail' do |ss|
+  ss.source_files = 'QLTieBaModel/Detail/**/*.{h,m,c,mm}'
+  end
 
 end

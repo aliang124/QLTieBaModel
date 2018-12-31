@@ -55,6 +55,7 @@
     bgView = [[UIButton alloc] initWithFrame:CGRectMake(8, 0, WTScreenWidth-8-8, 8)];
     [bgView setBackgroundImage:[WTUtil createImageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
     [bgView setBackgroundImage:[WTUtil createImageFromColor:WTColorHex(0xcccccc)] forState:UIControlStateHighlighted];
+    [bgView addTarget:self action:@selector(btnPress) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:bgView];
     //用户信息区域
     iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(12, 10, 30, 30)];
@@ -193,5 +194,11 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+}
+
+- (void)btnPress {
+    if (self.item.selectionHandler) {
+        self.item.selectionHandler(self.item);
+    }
 }
 @end
