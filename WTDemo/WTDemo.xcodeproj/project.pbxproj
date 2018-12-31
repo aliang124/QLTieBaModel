@@ -15,6 +15,7 @@
 		507900BC21DA38F100DF64EC /* QLTieBaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507900BB21DA38F100DF64EC /* QLTieBaDetailViewController.m */; };
 		507900BF21DA3B0800DF64EC /* QLTieBaTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507900BD21DA3B0800DF64EC /* QLTieBaTitleCell.m */; };
 		507900C221DA913B00DF64EC /* QLTieBaUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507900C121DA913B00DF64EC /* QLTieBaUserInfoCell.m */; };
+		507900C521DA97BC00DF64EC /* QLTieBaShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507900C421DA97BC00DF64EC /* QLTieBaShopCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -37,6 +38,8 @@
 		507900BE21DA3B0800DF64EC /* QLTieBaTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLTieBaTitleCell.h; sourceTree = "<group>"; };
 		507900C021DA913B00DF64EC /* QLTieBaUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLTieBaUserInfoCell.h; sourceTree = "<group>"; };
 		507900C121DA913B00DF64EC /* QLTieBaUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLTieBaUserInfoCell.m; sourceTree = "<group>"; };
+		507900C321DA97BC00DF64EC /* QLTieBaShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLTieBaShopCell.h; sourceTree = "<group>"; };
+		507900C421DA97BC00DF64EC /* QLTieBaShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLTieBaShopCell.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 		500F8DF621B8BE3000450A19 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				507900C321DA97BC00DF64EC /* QLTieBaShopCell.h */,
+				507900C421DA97BC00DF64EC /* QLTieBaShopCell.m */,
 				507900C021DA913B00DF64EC /* QLTieBaUserInfoCell.h */,
 				507900C121DA913B00DF64EC /* QLTieBaUserInfoCell.m */,
 				507900BE21DA3B0800DF64EC /* QLTieBaTitleCell.h */,
@@ -288,6 +293,7 @@
 				50181A4E21BA178000090951 /* QLMerchantListViewController.m in Sources */,
 				500F8DF521B8B4E400450A19 /* QLSubTieBaViewController.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
+				507900C521DA97BC00DF64EC /* QLTieBaShopCell.m in Sources */,
 				507900BC21DA38F100DF64EC /* QLTieBaDetailViewController.m in Sources */,
 				50DADCFD2192868400DA8BFE /* QLTieBaViewController.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
