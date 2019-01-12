@@ -18,6 +18,8 @@
 #import "QLMessageViewController.h"
 #import "QLGuanZhuViewController.h"
 #import "QLFunsViewController.h"
+#import "QLMineNetWork.h"
+#import "UIImageView+WebImage.h"
 
 @interface QLMineViewController ()
 {
@@ -25,6 +27,7 @@
     UILabel *tipTextLab;
     UIImageView *iconImg;
 }
+@property (nonatomic,copy) NSDictionary *accountCenterInfo;
 @end
 
 @implementation QLMineViewController
@@ -45,7 +48,7 @@
     //用户名
     userNameLab = [[UILabel alloc] initWithFrame:CGRectMake(21, 24+35+iXStatus, WTScreenWidth-21-82, 19)];
     userNameLab.font = WTFontSys(20);
-    userNameLab.text = @"天天兰兰";
+    userNameLab.text = [QLLoginInfo sharedInstance].username;
     userNameLab.textColor = QL_NavBar_TitleColor_Black;
     [self.view addSubview:userNameLab];
     ///头像
@@ -53,7 +56,6 @@
     iconImg.layer.borderColor = [UIColor whiteColor].CGColor;
     iconImg.layer.borderWidth = 2;
     iconImg.layer.masksToBounds = YES;
-    iconImg.backgroundColor = [UIColor redColor];
     [self.view addSubview:iconImg];
     //说明
     tipTextLab = [[UILabel alloc] initWithFrame:CGRectMake(21, userNameLab.bottom+18, 10, 9)];
@@ -85,6 +87,22 @@
     self.formTable.height = WTScreenHeight-WT_TabBar_Height-228-iXStatus;
     self.formTable.scrollEnabled = NO;
     [self initForm];
+    [self getAccountInfo];
+    WTAddNotification(@"UpdateUserInfoSuccess", @selector(getAccountInfo));
+}
+
+- (void)getAccountInfo {
+    [QLMineNetWork getAccountCenterInfo:^(id json) {
+        self.accountCenterInfo = json;
+        [self updateInfo];
+    } failHandler:^(NSString *message) {
+        [WTToast makeText:message];
+    }];
+}
+
+- (void)updateInfo {
+    userNameLab.text = [WTUtil strRelay:self.accountCenterInfo[@"nickName"]];
+    [iconImg setWebImageWithUrl:[WTUtil strRelay:self.accountCenterInfo[@"image"]] placeHolder:nil];
 }
 
 - (void)createItem:(int)idx barView:(UIView *)barView {

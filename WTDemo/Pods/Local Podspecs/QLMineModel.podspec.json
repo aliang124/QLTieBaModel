@@ -52,6 +52,10 @@
     {
       "name": "Cell",
       "source_files": "QLMineModel/Cell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "NetWorking",
+      "source_files": "QLMineModel/NetWorking/**/*.{h,m,c,mm}"
     }
   ]
 }
