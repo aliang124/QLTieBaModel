@@ -23,8 +23,4 @@ Pod::Spec.new do |s|
   ss.source_files = 'QLTieBaModel/Detail/**/*.{h,m,c,mm}'
   end
 
-  s.subspec 'Merchant' do |ss|
-  ss.source_files = 'QLTieBaModel/Merchant/**/*.{h,m,c,mm}'
-  end
-
 end
