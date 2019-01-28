@@ -11,6 +11,8 @@
 #import "QLTieBaUserInfoCell.h"
 #import "QLTieBaShopCell.h"
 #import "QLTieBaImageViewCell.h"
+#import "QLPingJiaDianZanCell.h"
+
 @interface QLTieBaDetailViewController ()
 
 @end
@@ -23,6 +25,7 @@
     self.formManager[@"QLTieBaUserInfoItem"] = @"QLTieBaUserInfoCell";
     self.formManager[@"QLTieBaShopItem"] = @"QLTieBaShopCell";
     self.formManager[@"QLTieBaImageViewItem"] = @"QLTieBaImageViewCell";
+    self.formManager[@"QLPingJiaDianZanItem"] = @"QLPingJiaDianZanCell";
     [self initForm];
 }
 
@@ -69,6 +72,21 @@
     itContent1.rightOffset = 22;
     [section0 addItem:itContent1];
 
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    
+    QLPingJiaDianZanItem *itZan = [[QLPingJiaDianZanItem alloc] init];
+    itZan.count = @"1234";
+    [section0 addItem:itZan];
+
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+
+    QLPingJiaDianZanItem *itHuiFu = [[QLPingJiaDianZanItem alloc] init];
+    itHuiFu.count = @"1234";
+    itHuiFu.isHuiFuTitle = YES;
+    [section0 addItem:itHuiFu];
+
+    
+    
     [section0 addItem:[WTEmptyItem initWithHeight:17 bgColor:[UIColor whiteColor]]];
 
     [sectionArray addObject:section0];
