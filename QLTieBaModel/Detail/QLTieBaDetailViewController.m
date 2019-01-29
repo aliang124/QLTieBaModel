@@ -12,6 +12,7 @@
 #import "QLTieBaShopCell.h"
 #import "QLTieBaImageViewCell.h"
 #import "QLPingJiaDianZanCell.h"
+#import "QLTieBaNetWork.h"
 
 @interface QLTieBaDetailViewController ()
 
@@ -26,7 +27,18 @@
     self.formManager[@"QLTieBaShopItem"] = @"QLTieBaShopCell";
     self.formManager[@"QLTieBaImageViewItem"] = @"QLTieBaImageViewCell";
     self.formManager[@"QLPingJiaDianZanItem"] = @"QLPingJiaDianZanCell";
-    [self initForm];
+    [self getData];
+}
+
+- (void)getData {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:[WTUtil strRelay:self.subjectId] forKey:@"subjectId"];
+    [QLTieBaNetWork getTieBaDetail:param successHandler:^(id json) {
+        NSLog(@"aaaaa");
+        [self initForm];
+    } failHandler:^(NSString *message) {
+        NSLog(@"bbbbbbb");
+    }];
 }
 
 - (void)initForm {

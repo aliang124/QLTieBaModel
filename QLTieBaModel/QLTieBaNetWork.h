@@ -16,4 +16,7 @@
 /*  获取贴吧列表
  */
 + (void)getTieBaList:(NSDictionary *)param successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
+/*  获取贴吧详情
+ */
++ (void)getTieBaDetail:(NSDictionary *)param successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler;
 @end

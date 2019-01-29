@@ -57,6 +57,7 @@
         it.info = dic;
         it.selectionHandler = ^(QLTieBaItem *item) {
             QLTieBaDetailViewController *detail = [[QLTieBaDetailViewController alloc] init];
+            detail.subjectId = item.info[@"subjectId"];
             [weakSelf.navigationController pushViewController:detail animated:YES];
         };
         [section0 addItem:it];
