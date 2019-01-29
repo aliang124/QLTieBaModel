@@ -124,7 +124,8 @@
     
     liuYanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [liuYanIcon setImage:[UIImage imageNamed:@"liuyan"]];
-    
+    [bgView addSubview:liuYanIcon];
+
     //浏览数
     liulanCountLab = [[UILabel alloc] initWithFrame:CGRectMake(bgView.width-12, netImg1.bottom+9, 9, 7)];
     liulanCountLab.font = WTFontSys(10);
@@ -134,8 +135,6 @@
     liulanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [liulanIcon setImage:[UIImage imageNamed:@"liulan"]];
     [bgView addSubview:liulanIcon];
-    
-    [bgView addSubview:liuYanIcon];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -145,11 +144,10 @@
 {
     [super cellWillAppear];
     self.backgroundColor = WT_Color_ViewBackGround;
-    self.contentView.backgroundColor = WT_Color_ViewBackGround;
     //
-    userNameLab.text = @"用户A";
-    titleLab.text = @"爸妈做到这5点，宝宝将来不愁大长腿！";
-    descLab.text = @"青春期是长高的一个黄金期，爸妈都知道，小南就略过不提。重点说说爸妈可能忽略的“3岁前”吧。先说说宝宝身高增长的";
+    userNameLab.text = [WTUtil strRelay:self.item.info[@"memberName"]];
+    titleLab.text = [WTUtil strRelay:self.item.info[@"name"]];
+    descLab.text = [WTUtil strRelay:self.item.info[@"description"]];
 
     //标题自适应高度缓存
     if (self.item.titleTextHeight==5) {

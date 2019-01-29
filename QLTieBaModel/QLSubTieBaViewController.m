@@ -36,7 +36,7 @@
     [QLTieBaNetWork getTieBaList:nil successHandler:^(id json) {
         NSArray *ar = json[@"subjectData"];
         if (ar && [ar isKindOfClass:[NSArray class]]) {
-            [self.dataArray addObject:ar];
+            [self.dataArray addObjectsFromArray:ar];
         }
         [self initForm];
     } failHandler:^(NSString *message) {
