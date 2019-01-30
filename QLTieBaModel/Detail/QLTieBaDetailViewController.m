@@ -64,13 +64,13 @@
     QLTieBaUserInfoItem *itUserInfo = [[QLTieBaUserInfoItem alloc] init];
     itUserInfo.info = self.subjectInfo;
     [section0 addItem:itUserInfo];
-//    //店铺信息
-//    QLTieBaShopItem *itShop = [[QLTieBaShopItem alloc] init];
-//    itShop.shopNameText = @"韩式亲子装专卖店";
-//    [section0 addItem:itShop];
-//
-//    [section0 addItem:[WTEmptyItem initWithHeight:15 bgColor:[UIColor whiteColor]]];
-//
+    //店铺信息
+    QLTieBaShopItem *itShop = [[QLTieBaShopItem alloc] init];
+    itShop.shopNameText = [WTUtil strRelay:self.subjectInfo[@"businessName"]];
+    itShop.info = self.subjectInfo;
+    [section0 addItem:itShop];
+    [section0 addItem:[WTEmptyItem initWithHeight:15 bgColor:[UIColor whiteColor]]];
+
 //    QLTieBaTitleItem *itContent = [[QLTieBaTitleItem alloc] init];
 //    itContent.titleText = @"很早开始买的一家亲子装店淘宝店，以韩风主打，感觉每件衣服都很时髦，肯定不会撞衫，最关键的是他们家的小模特特别漂亮。夏装以纱裙主打都看起来很仙，包装真的很实在，印象中以前帮我哥家侄女买的一款裙子，包装好，关键是价格一直很良心，买多几件不心疼那种。";
 //    itContent.titleFont = WTFontSys(14);
