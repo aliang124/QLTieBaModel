@@ -11,6 +11,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 #import "QLTieBaNetWork.h"
+#import "QLFaTieCategoryController.h"
 
 @interface QLTieBaViewController ()<WTTabPagerControllerDataSource,WTTabPagerControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *catogeryList;
@@ -41,6 +42,13 @@
     self.navBar.rightItemList = [NSArray arrayWithObjects:msgIt,searchIt, nil];
     [self.navBar setNeedsLayout];
     
+    
+    UIButton *addBtn = [[UIButton alloc] initWithFrame:CGRectMake(WTScreenWidth-8-48, WTScreenHeight-QL_TabBar_HEIGHT-10-48, 48, 48)];
+    [addBtn setImage:[UIImage imageNamed:@"faTie"] forState:UIControlStateNormal];
+    [addBtn setImage:[UIImage imageNamed:@"faTie_H"] forState:UIControlStateHighlighted];
+    [addBtn addTarget:self action:@selector(addTieZi) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addBtn];
+
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:@"1000" forKey:@"pageSize"];
     [param setObject:@"1" forKey:@"page"];
@@ -93,4 +101,9 @@
     return title;
 }
 
+- (void)addTieZi {
+    QLFaTieCategoryController *tie = [[QLFaTieCategoryController alloc] init];
+    tie.catogeryList = self.catogeryList;
+    [self.navigationController pushViewController:tie animated:YES];
+}
 @end

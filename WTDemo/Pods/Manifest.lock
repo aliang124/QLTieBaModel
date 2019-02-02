@@ -65,8 +65,10 @@ PODS:
   - QLHomeModel (0.0.1):
     - QLHomeModel/Cell (= 0.0.1)
     - QLHomeModel/NetWorking (= 0.0.1)
+    - QLHomeModel/View (= 0.0.1)
   - QLHomeModel/Cell (0.0.1)
   - QLHomeModel/NetWorking (0.0.1)
+  - QLHomeModel/View (0.0.1)
   - QLLoginModel (0.0.1):
     - QLLoginModel/Controller (= 0.0.1)
     - QLLoginModel/NetWorking (= 0.0.1)
@@ -228,25 +230,25 @@ CHECKOUT OPTIONS:
     :commit: 727656369ad82ca2e04e22a759662b7baee2f8dd
     :git: https://github.com/aliang124/QLADLaunchModel.git
   QLBusiness:
-    :commit: 9ae7c9667b11a10f8db11ff31bcaed7a74231c31
+    :commit: e47e9cfa770fe30ef545b82198b71fb602923093
     :git: https://github.com/aliang124/QLBusiness.git
   QLCareModel:
-    :commit: 64e90b16284b330a0bea537bea32552133415464
+    :commit: 36cd07695527da8da879bdcc3a360aef8017ebd0
     :git: https://github.com/aliang124/QLCareModel.git
   QLHomeModel:
-    :commit: b60d8e0f4d622d0d1fbdf6618a56954f0deecc64
+    :commit: 809ee2260ee4deb0d27bf350e82409f5a4085267
     :git: https://github.com/aliang124/QLHomeModel.git
   QLLoginModel:
     :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
     :git: https://github.com/aliang124/QLLoginModel.git
   QLMerchantModel:
-    :commit: 32c991bb585f0c1d04bc2d7fd324af0702d863c8
+    :commit: 610036c61049f63befa148172c69b7034ff29c84
     :git: https://github.com/aliang124/QLMerchantModel.git
   QLMineModel:
-    :commit: 0ea19ad18522064b0922b1ac9d93a805a6ccc6ff
+    :commit: 8379a06595737d6fc61c7f32fc5cb13cd87ab326
     :git: https://github.com/aliang124/QLMineModel.git
   WTBaseCore:
-    :commit: 5e10d00566080cb22b4acaef7c5bb0dea5a72bd9
+    :commit: e3e88dc02154d1c84c12ac5fe02117479e1a09ae
     :git: https://github.com/jienliang000/WTBaseCore.git
   WTCyclePagerView:
     :commit: 5806905a2b767426934cd0a72b2acb121d860fa3
@@ -281,7 +283,7 @@ SPEC CHECKSUMS:
   QLADLaunchModel: 892d37065da2b02475794ed59a9132ca3c5dc083
   QLBusiness: 998e0659a05b8e7e255e3c064d6252667883e880
   QLCareModel: d3bbba4b7aae0df90b6153ab9496bf22f301a799
-  QLHomeModel: c4cb910b387f1e98ea2391de187b15884e5b245e
+  QLHomeModel: 7626b2065be17aee9507b475af3deedc3ae95a23
   QLLoginModel: ba379e60d2afe6170803201999d962c047387abb
   QLMerchantModel: 56c96d89c03b56953630004324cfd52ec6167781
   QLMineModel: 7fc344f7b9df1b494c9594c38bbdd330256636c9
