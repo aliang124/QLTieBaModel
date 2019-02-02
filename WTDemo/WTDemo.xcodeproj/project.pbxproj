@@ -12,6 +12,9 @@
 		500F8DF921B8BE3100450A19 /* QLTieBaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F8DF821B8BE3000450A19 /* QLTieBaCell.m */; };
 		505DB7562205F1220088F9C5 /* QLFaTieCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7552205F1220088F9C5 /* QLFaTieCategoryController.m */; };
 		505DB7592205F6890088F9C5 /* QLFaTieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7582205F6890088F9C5 /* QLFaTieViewController.m */; };
+		505DB75C2205F7FF0088F9C5 /* QLFaTieTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB75A2205F7FF0088F9C5 /* QLFaTieTitleCell.m */; };
+		505DB75F2205FA320088F9C5 /* QLFaTieContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB75E2205FA320088F9C5 /* QLFaTieContentCell.m */; };
+		505DB7622205FB9E0088F9C5 /* QLFaTieCheckCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7612205FB9D0088F9C5 /* QLFaTieCheckCell.m */; };
 		505F4AF021FAAE3800F5B354 /* Target_QLTieBaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4AEE21FAAE3800F5B354 /* Target_QLTieBaModel.m */; };
 		505FE6F021FFF23A008B8FD6 /* QLTieBaNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FE6EF21FFF23A008B8FD6 /* QLTieBaNetWork.m */; };
 		507900BC21DA38F100DF64EC /* QLTieBaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507900BB21DA38F100DF64EC /* QLTieBaDetailViewController.m */; };
@@ -35,6 +38,12 @@
 		505DB7552205F1220088F9C5 /* QLFaTieCategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLFaTieCategoryController.m; sourceTree = "<group>"; };
 		505DB7572205F6890088F9C5 /* QLFaTieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLFaTieViewController.h; sourceTree = "<group>"; };
 		505DB7582205F6890088F9C5 /* QLFaTieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLFaTieViewController.m; sourceTree = "<group>"; };
+		505DB75A2205F7FF0088F9C5 /* QLFaTieTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLFaTieTitleCell.m; sourceTree = "<group>"; };
+		505DB75B2205F7FF0088F9C5 /* QLFaTieTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLFaTieTitleCell.h; sourceTree = "<group>"; };
+		505DB75D2205FA320088F9C5 /* QLFaTieContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLFaTieContentCell.h; sourceTree = "<group>"; };
+		505DB75E2205FA320088F9C5 /* QLFaTieContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLFaTieContentCell.m; sourceTree = "<group>"; };
+		505DB7602205FB9D0088F9C5 /* QLFaTieCheckCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLFaTieCheckCell.h; sourceTree = "<group>"; };
+		505DB7612205FB9D0088F9C5 /* QLFaTieCheckCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLFaTieCheckCell.m; sourceTree = "<group>"; };
 		505F4AEE21FAAE3800F5B354 /* Target_QLTieBaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_QLTieBaModel.m; sourceTree = "<group>"; };
 		505F4AEF21FAAE3800F5B354 /* Target_QLTieBaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_QLTieBaModel.h; sourceTree = "<group>"; };
 		505FE6EE21FFF23A008B8FD6 /* QLTieBaNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLTieBaNetWork.h; sourceTree = "<group>"; };
@@ -79,6 +88,12 @@
 		500F8DF621B8BE3000450A19 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				505DB7602205FB9D0088F9C5 /* QLFaTieCheckCell.h */,
+				505DB7612205FB9D0088F9C5 /* QLFaTieCheckCell.m */,
+				505DB75D2205FA320088F9C5 /* QLFaTieContentCell.h */,
+				505DB75E2205FA320088F9C5 /* QLFaTieContentCell.m */,
+				505DB75B2205F7FF0088F9C5 /* QLFaTieTitleCell.h */,
+				505DB75A2205F7FF0088F9C5 /* QLFaTieTitleCell.m */,
 				507900C621DAA58900DF64EC /* QLTieBaImageViewCell.h */,
 				507900C721DAA58900DF64EC /* QLTieBaImageViewCell.m */,
 				507900C321DA97BC00DF64EC /* QLTieBaShopCell.h */,
@@ -310,6 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505DB75F2205FA320088F9C5 /* QLFaTieContentCell.m in Sources */,
+				505DB75C2205F7FF0088F9C5 /* QLFaTieTitleCell.m in Sources */,
+				505DB7622205FB9E0088F9C5 /* QLFaTieCheckCell.m in Sources */,
 				505F4AF021FAAE3800F5B354 /* Target_QLTieBaModel.m in Sources */,
 				500F8DF921B8BE3100450A19 /* QLTieBaCell.m in Sources */,
 				500F8DF521B8B4E400450A19 /* QLSubTieBaViewController.m in Sources */,

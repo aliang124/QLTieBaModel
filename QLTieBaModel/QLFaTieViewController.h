@@ -6,12 +6,10 @@
 //  Copyright © 2019年 计恩良. All rights reserved.
 //
 
-#import "QLViewController.h"
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
+#import "QLTieBaNetWork.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface QLFaTieViewController : QLViewController
+@interface QLFaTieViewController : QLFormViewController
 @property (nonatomic,copy) NSDictionary *categoryInfo;
 @end
-
-NS_ASSUME_NONNULL_END
