@@ -10,7 +10,14 @@
 #import "QLFaTieTitleCell.h"
 #import "QLFaTieContentCell.h"
 #import "QLFaTieCheckCell.h"
+@interface QLFaTieViewController ()
+@property (nonatomic,strong) QLFaTieTitleItem *itTitle;
+@property (nonatomic,strong) QLFaTieContentItem *itContent;
+@property (nonatomic,strong) QLFaTieCheckItem *itCheck;
+@end
+
 @implementation QLFaTieViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.title = [NSString stringWithFormat:@"发帖-%@",[WTUtil strRelay:self.categoryInfo[@"name"]]];
@@ -28,17 +35,16 @@
 
     [section0 addItem:[WTEmptyItem initWithHeight:16]];
     //输入标题
-    QLFaTieTitleItem *itTitle = [[QLFaTieTitleItem alloc] init];
-    [section0 addItem:itTitle];
-    
+    self.itTitle = [[QLFaTieTitleItem alloc] init];
+    [section0 addItem:self.itTitle];
     [section0 addItem:[WTEmptyItem initWithHeight:12]];
-    
-    QLFaTieContentItem *itContent = [[QLFaTieContentItem alloc] init];
-    [section0 addItem:itContent];
-
-    QLFaTieCheckItem *itCheck = [[QLFaTieCheckItem alloc] init];
-    [section0 addItem:itCheck];
-    
+    //输入内容
+    self.itContent = [[QLFaTieContentItem alloc] init];
+    [section0 addItem:self.itContent];
+    //是否匿名
+    self.itCheck = [[QLFaTieCheckItem alloc] init];
+    [section0 addItem:self.itCheck];
+    //选择图片
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
