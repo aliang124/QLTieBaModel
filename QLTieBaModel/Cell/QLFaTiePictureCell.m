@@ -9,6 +9,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 #import "UIImageView+WebImage.h"
+#import "UIButton+WebImage.h"
 #import "WTImagePickerUtil.h"
 
 @implementation QLFaTiePictureItem
@@ -50,9 +51,19 @@
     [self.contentView removeAllSubviews];
     float offset = 16;
     for (int i = 0; i < self.item.pictureArray.count; i++) {
-        
+        UIImage *img = self.item.pictureArray[i];
+        offset = 16+i*100+i*14;
+
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offset, 0, 100, 100)];
+        btn.backgroundColor = WTColorHex(0xFAFAF7);
+        btn.layer.borderColor = WTColorHex(0xECECE6).CGColor;
+        btn.layer.borderWidth = 1;
+        [btn setImage:img forState:UIControlStateNormal];
+        [self.contentView addSubview:btn];
     }
     if (self.item.pictureArray.count<3) {
+        offset = 16+self.item.pictureArray.count*114;
+        
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offset, 0, 100, 100)];
         btn.backgroundColor = WTColorHex(0xFAFAF7);
         btn.layer.borderColor = WTColorHex(0xECECE6).CGColor;
