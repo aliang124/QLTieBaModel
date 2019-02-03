@@ -49,7 +49,7 @@
 }
 
 - (void)btnPress:(UIButton *)btn {
-    int index = btn.tag - 100;
+    int index = ((int)btn.tag) - 100;
     NSDictionary *dic = self.catogeryList[index];
     
     QLFaTieViewController *vc = [[QLFaTieViewController alloc] init];

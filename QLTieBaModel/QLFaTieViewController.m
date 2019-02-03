@@ -12,6 +12,8 @@
 #import "QLFaTieCheckCell.h"
 #import "QLFaTiePictureCell.h"
 #import "QLFaTieMerchantCell.h"
+#import "QLTieBaNetWork.h"
+
 @interface QLFaTieViewController ()
 @property (nonatomic,strong) QLFaTieTitleItem *itTitle;
 @property (nonatomic,strong) QLFaTieContentItem *itContent;
@@ -74,6 +76,24 @@
 }
 
 - (void)fabuBtnPress {
+    [QLMBProgressHUDUtil showActivityMessageInWindow:@"正在发布"];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:[WTUtil strRelay:self.categoryInfo[@"plateId"]] forKey:@"plateId"];
+    [param setObject:@"这个是测试发布的帖子" forKey:@"name"];
+    [param setObject:@"这是一个测试帖子的内容这是一个测试帖子的内容这是一个测试帖子的内容这是一个测试帖子的内容这是一个测试帖子的内容这是一个测试帖子的内容这是一个测试帖子的内容这是一个测试帖子的内容" forKey:@"description"];
     
+    NSMutableArray *attachment = [[NSMutableArray alloc] init];
+    [attachment addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg",@"url",@"1",@"type", nil]];
+    [attachment addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg",@"url",@"1",@"type", nil]];
+    [attachment addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg",@"url",@"1",@"type", nil]];
+    [param setObject:attachment forKey:@"attachment"];
+    
+    [QLTieBaNetWork confirmSubject:param successHandler:^(id json) {
+        [QLMBProgressHUDUtil hideHUD];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } failHandler:^(NSString *message) {
+        [QLMBProgressHUDUtil hideHUD];
+        [WTToast makeText:message];
+    }];
 }
 @end

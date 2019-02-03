@@ -77,6 +77,7 @@
     guanBtn.layer.masksToBounds = YES;
     guanBtn.titleLabel.font = WTFontSys(12);
     [guanBtn setTitleColor:QL_UserName_TitleColor_Black forState:UIControlStateNormal];
+    [guanBtn addTarget:self action:@selector(guanzhuBtnPress) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:guanBtn];
     
     UIImageView *lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(13, 49.5, bgView.width-13-15, WT_Line_Height)];
@@ -199,6 +200,12 @@
 - (void)btnPress {
     if (self.item.selectionHandler) {
         self.item.selectionHandler(self.item);
+    }
+}
+
+- (void)guanzhuBtnPress {
+    if (self.item.guanzhuHandler) {
+        self.item.guanzhuHandler();
     }
 }
 @end
