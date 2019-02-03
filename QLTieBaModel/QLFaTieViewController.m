@@ -31,7 +31,16 @@
     self.formManager[@"QLFaTieCheckItem"] = @"QLFaTieCheckCell";
     self.formManager[@"QLFaTiePictureItem"] = @"QLFaTiePictureCell";
     self.formManager[@"QLFaTieMerchantItem"] = @"QLFaTieMerchantCell";
+
     [self initForm];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(8, WTScreenHeight-8-38-QL_SafeArea_BOTTOM, WTScreenWidth-8-8, 38)];
+    [btn setBackgroundImage:[WTUtil createImageFromColor:QL_NavBar_BgColor_Yellow] forState:UIControlStateNormal];
+    [btn setTitle:@"立即发布" forState:UIControlStateNormal];
+    [btn setTitleColor:QL_NavBar_TitleColor_Black forState:UIControlStateNormal];
+    btn.titleLabel.font = WTFontSys(14);
+    [btn addTarget:self action:@selector(fabuBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
 
 - (void)initForm {
@@ -64,4 +73,7 @@
     [self.formTable reloadData];
 }
 
+- (void)fabuBtnPress {
+    
+}
 @end
