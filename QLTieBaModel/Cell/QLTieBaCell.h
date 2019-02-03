@@ -13,7 +13,7 @@
 @property (nonatomic,assign) float titleTextHeight;
 //缓存说明高度
 @property (nonatomic,assign) float descTextHeight;
-@property (copy, readwrite, nonatomic) void (^guanzhuHandler)(void);
+@property (copy, readwrite, nonatomic) void (^guanzhuHandler)(id info);
 @end
 
 @interface QLTieBaCell : WTBaseCell

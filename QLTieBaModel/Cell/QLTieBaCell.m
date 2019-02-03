@@ -168,12 +168,12 @@
     bgView.height = netImg1.bottom+32;
     //
     tagLab.top = netImg1.bottom+6;
-    tagLab.text = @"吃喝玩乐";
+    tagLab.text = [WTUtil strRelay:self.item.info[@"plateName"]];
     [tagLab sizeToFit];
     tagLab.width = tagLab.width + 8;
     tagLab.height = tagLab.height + 4;
     //留言数
-    liuYanCountLab.text = @"1212";
+    liuYanCountLab.text = [WTUtil strRelay:self.item.info[@"commentsNumber"]];
     liuYanCountLab.top = netImg1.bottom+9;
     [liuYanCountLab sizeToFit];
     liuYanCountLab.left = bgView.width-12-liuYanCountLab.width;
@@ -181,13 +181,18 @@
     liuYanIcon.top = netImg1.bottom+9;
     liuYanIcon.left = liuYanCountLab.left-5-10;
     //浏览数
-    liulanCountLab.text = @"1212";
+    liulanCountLab.text = [WTUtil strRelay:self.item.info[@"browseNumber"]];
     liulanCountLab.top = netImg1.bottom+9;
     [liulanCountLab sizeToFit];
     liulanCountLab.left = liuYanIcon.left-16-liulanCountLab.width;
     
     liulanIcon.top = netImg1.bottom+9;
     liulanIcon.left = liulanCountLab.left-5-10;
+    
+    [guanBtn setTitle:@"+ 关注" forState:UIControlStateNormal];
+    if ([[WTUtil strRelay:self.item.info[@"isFollow"]] boolValue]) {
+        [guanBtn setTitle:@"取消关注" forState:UIControlStateNormal];
+    }
     
     self.item.cellHeight = bgView.height;
 }
@@ -205,7 +210,7 @@
 
 - (void)guanzhuBtnPress {
     if (self.item.guanzhuHandler) {
-        self.item.guanzhuHandler();
+        self.item.guanzhuHandler(self.item.info);
     }
 }
 @end

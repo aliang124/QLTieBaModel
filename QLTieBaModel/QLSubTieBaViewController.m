@@ -12,6 +12,7 @@
 #import "QLTieBaNetWork.h"
 #import "WTLoadFailEmpty.h"
 #import <MJRefresh.h>
+#import "QLMineNetWork.h"
 
 @interface QLSubTieBaViewController ()
 @property (nonatomic, assign) int pageIndex;
@@ -87,6 +88,9 @@
             detail.subjectId = item.info[@"subjectId"];
             [weakSelf.navigationController pushViewController:detail animated:YES];
         };
+        it.guanzhuHandler = ^(id info) {
+            [weakSelf guanZhu:info];
+        };
         [section0 addItem:it];
     }
     [section0 addItem:[WTEmptyItem initWithHeight:8]];
@@ -97,4 +101,14 @@
     [self.formTable reloadData];
 }
 
+- (void)guanZhu:(id)info {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:@"3" forKey:@"type"];
+    [param setObject:[WTUtil strRelay:info[@"subjectId"]] forKey:@"objectId"];
+    [QLMineNetWork guanZhuUser:param successHandler:^(id json) {
+        [self.formTable.mj_header beginRefreshing];
+    } failHandler:^(NSString *message) {
+        [WTToast makeText:message];
+    }];
+}
 @end
