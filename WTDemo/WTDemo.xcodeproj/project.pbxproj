@@ -11,6 +11,7 @@
 		500F8DF521B8B4E400450A19 /* QLSubTieBaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F8DF421B8B4E400450A19 /* QLSubTieBaViewController.m */; };
 		500F8DF921B8BE3100450A19 /* QLTieBaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F8DF821B8BE3000450A19 /* QLTieBaCell.m */; };
 		505796B122067A2B008044DF /* QLFaTiePictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505796AF22067A2B008044DF /* QLFaTiePictureCell.m */; };
+		505796B722068549008044DF /* QLFaTieMerchantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505796B522068549008044DF /* QLFaTieMerchantCell.m */; };
 		505DB7562205F1220088F9C5 /* QLFaTieCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7552205F1220088F9C5 /* QLFaTieCategoryController.m */; };
 		505DB7592205F6890088F9C5 /* QLFaTieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7582205F6890088F9C5 /* QLFaTieViewController.m */; };
 		505DB75C2205F7FF0088F9C5 /* QLFaTieTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB75A2205F7FF0088F9C5 /* QLFaTieTitleCell.m */; };
@@ -37,6 +38,8 @@
 		500F8DF821B8BE3000450A19 /* QLTieBaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLTieBaCell.m; sourceTree = "<group>"; };
 		505796AF22067A2B008044DF /* QLFaTiePictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLFaTiePictureCell.m; sourceTree = "<group>"; };
 		505796B022067A2B008044DF /* QLFaTiePictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLFaTiePictureCell.h; sourceTree = "<group>"; };
+		505796B522068549008044DF /* QLFaTieMerchantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLFaTieMerchantCell.m; sourceTree = "<group>"; };
+		505796B622068549008044DF /* QLFaTieMerchantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLFaTieMerchantCell.h; sourceTree = "<group>"; };
 		505DB7542205F1220088F9C5 /* QLFaTieCategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLFaTieCategoryController.h; sourceTree = "<group>"; };
 		505DB7552205F1220088F9C5 /* QLFaTieCategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLFaTieCategoryController.m; sourceTree = "<group>"; };
 		505DB7572205F6890088F9C5 /* QLFaTieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLFaTieViewController.h; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		500F8DF621B8BE3000450A19 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				505796B622068549008044DF /* QLFaTieMerchantCell.h */,
+				505796B522068549008044DF /* QLFaTieMerchantCell.m */,
 				505796B022067A2B008044DF /* QLFaTiePictureCell.h */,
 				505796AF22067A2B008044DF /* QLFaTiePictureCell.m */,
 				505DB7602205FB9D0088F9C5 /* QLFaTieCheckCell.h */,
@@ -346,6 +351,7 @@
 				50DADCFD2192868400DA8BFE /* QLTieBaViewController.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				507900BF21DA3B0800DF64EC /* QLTieBaTitleCell.m in Sources */,
+				505796B722068549008044DF /* QLFaTieMerchantCell.m in Sources */,
 				507900C221DA913B00DF64EC /* QLTieBaUserInfoCell.m in Sources */,
 				505796B122067A2B008044DF /* QLFaTiePictureCell.m in Sources */,
 			);

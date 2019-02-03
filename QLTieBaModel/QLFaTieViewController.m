@@ -11,12 +11,13 @@
 #import "QLFaTieContentCell.h"
 #import "QLFaTieCheckCell.h"
 #import "QLFaTiePictureCell.h"
-
+#import "QLFaTieMerchantCell.h"
 @interface QLFaTieViewController ()
 @property (nonatomic,strong) QLFaTieTitleItem *itTitle;
 @property (nonatomic,strong) QLFaTieContentItem *itContent;
 @property (nonatomic,strong) QLFaTieCheckItem *itCheck;
 @property (nonatomic,strong) QLFaTiePictureItem *itPicture;
+@property (nonatomic,strong) QLFaTieMerchantItem *itMerchant;
 @end
 
 @implementation QLFaTieViewController
@@ -29,6 +30,7 @@
     self.formManager[@"QLFaTieContentItem"] = @"QLFaTieContentCell";
     self.formManager[@"QLFaTieCheckItem"] = @"QLFaTieCheckCell";
     self.formManager[@"QLFaTiePictureItem"] = @"QLFaTiePictureCell";
+    self.formManager[@"QLFaTieMerchantItem"] = @"QLFaTieMerchantCell";
     [self initForm];
 }
 
@@ -52,6 +54,10 @@
     self.itPicture = [[QLFaTiePictureItem alloc] init];
     self.itPicture.weakController = self;
     [section0 addItem:_itPicture];
+    //选择商家
+    [section0 addItem:[WTEmptyItem initWithHeight:16]];
+    self.itMerchant = [[QLFaTieMerchantItem alloc] init];
+    [section0 addItem:self.itMerchant];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
