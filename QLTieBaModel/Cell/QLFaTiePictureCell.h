@@ -9,6 +9,7 @@
 #import "QLBusiness.h"
 @interface QLFaTiePictureItem : WTBaseItem
 @property (nonatomic,strong) NSMutableArray *pictureArray;
+@property (nonatomic,weak) UIViewController *weakController;
 @end
 
 @interface QLFaTiePictureCell : WTBaseCell

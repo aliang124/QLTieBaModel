@@ -9,6 +9,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 #import "UIImageView+WebImage.h"
+#import "WTImagePickerUtil.h"
 
 @implementation QLFaTiePictureItem
 - (id)init{
@@ -42,6 +43,10 @@
 {
     [super cellWillAppear];
     self.backgroundColor = [UIColor whiteColor];
+    [self resetAllPictures];
+}
+
+- (void)resetAllPictures {
     [self.contentView removeAllSubviews];
     float offset = 16;
     for (int i = 0; i < self.item.pictureArray.count; i++) {
@@ -52,12 +57,19 @@
     btn.layer.borderColor = WTColorHex(0xECECE6).CGColor;
     btn.layer.borderWidth = 1;
     [btn setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnPress) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:btn];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
+- (void)btnPress {
+    [[WTImagePickerUtil shareInstance] showImagePicker:WTImagePickerUtilTypeActionMulti inViewController:self.item.weakController];
+    [WTImagePickerUtil shareInstance].maxCount = 3;
+    [[WTImagePickerUtil shareInstance] setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
+        if (photos.count>0) {
+            [self.item.pictureArray addObjectsFromArray:photos];
+            [self resetAllPictures];
+        }
+    }];
 }
 
 @end

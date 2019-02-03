@@ -50,10 +50,12 @@
     [section0 addItem:self.itCheck];
     //选择图片
     self.itPicture = [[QLFaTiePictureItem alloc] init];
+    self.itPicture.weakController = self;
     [section0 addItem:_itPicture];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
 }
+
 @end
