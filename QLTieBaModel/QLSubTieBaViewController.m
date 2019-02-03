@@ -10,9 +10,13 @@
 #import "QLTieBaCell.h"
 #import "QLTieBaDetailViewController.h"
 #import "QLTieBaNetWork.h"
+#import "WTLoadFailEmpty.h"
+#import <MJRefresh.h>
 
 @interface QLSubTieBaViewController ()
 @property (nonatomic, assign) int pageIndex;
+@property (nonatomic, assign) int totalPage;
+@property (nonatomic,assign) BOOL isFromRefresh;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
@@ -24,6 +28,13 @@
     self.formManager[@"QLTieBaItem"] = @"QLTieBaCell";
     self.formTable.top = 0;
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-32-WT_TabBar_Height;
+    
+    self.formTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.pageIndex = 1;
+        self.isFromRefresh = YES;
+        [self getData];
+    }];
+    [WTLoadingView1 showLoadingInView:self.view top:self.formTable.top];
     self.pageIndex = 1;
     [self getData];
 }
@@ -34,13 +45,28 @@
     [param setObject:@"10" forKey:@"pageSize"];
     [param setObject:self.catogeryInfo[@"plateId"] forKey:@"plateId"];
     [QLTieBaNetWork getTieBaList:nil successHandler:^(id json) {
+        [self.formTable.mj_header endRefreshing];
+        [WTLoadingView1 hideAllLoadingForView:self.view];
+        
+        self.totalPage = [[WTUtil strRelay:json[@"count"]] intValue];
+        if (self.isFromRefresh) {
+            [self.dataArray removeAllObjects];
+        }
         NSArray *ar = json[@"subjectData"];
         if (ar && [ar isKindOfClass:[NSArray class]]) {
             [self.dataArray addObjectsFromArray:ar];
         }
         [self initForm];
+        self.isFromRefresh = NO;
     } failHandler:^(NSString *message) {
-        NSLog(@"bbbbbb");
+        [self.formTable.mj_header endRefreshing];
+        if (self.isFromRefresh) {
+            [WTLoadFailView showFailInView:self.view top:self.formTable.top retryPress:^{
+                [WTLoadingView1 showLoadingInView:self.view top:self.formTable.top];
+                [self getData];
+            }];
+        }
+        self.isFromRefresh = NO;
     }];
 }
 
