@@ -25,6 +25,7 @@
     [super viewDidLoad];
     _dataArray = [[NSMutableArray alloc] init];
     self.navBar.hidden = YES;
+    self.isFromRefresh = YES;
     self.formManager[@"QLTieBaItem"] = @"QLTieBaCell";
     self.formTable.top = 0;
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-32-WT_TabBar_Height;

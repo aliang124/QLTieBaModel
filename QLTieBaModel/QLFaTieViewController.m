@@ -10,10 +10,13 @@
 #import "QLFaTieTitleCell.h"
 #import "QLFaTieContentCell.h"
 #import "QLFaTieCheckCell.h"
+#import "QLFaTiePictureCell.h"
+
 @interface QLFaTieViewController ()
 @property (nonatomic,strong) QLFaTieTitleItem *itTitle;
 @property (nonatomic,strong) QLFaTieContentItem *itContent;
 @property (nonatomic,strong) QLFaTieCheckItem *itCheck;
+@property (nonatomic,strong) QLFaTiePictureItem *itPicture;
 @end
 
 @implementation QLFaTieViewController
@@ -25,6 +28,7 @@
     self.formManager[@"QLFaTieTitleItem"] = @"QLFaTieTitleCell";
     self.formManager[@"QLFaTieContentItem"] = @"QLFaTieContentCell";
     self.formManager[@"QLFaTieCheckItem"] = @"QLFaTieCheckCell";
+    self.formManager[@"QLFaTiePictureItem"] = @"QLFaTiePictureCell";
     [self initForm];
 }
 
@@ -45,6 +49,9 @@
     self.itCheck = [[QLFaTieCheckItem alloc] init];
     [section0 addItem:self.itCheck];
     //选择图片
+    self.itPicture = [[QLFaTiePictureItem alloc] init];
+    [section0 addItem:_itPicture];
+    
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
