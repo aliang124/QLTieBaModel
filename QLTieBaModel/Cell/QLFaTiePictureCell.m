@@ -52,13 +52,15 @@
     for (int i = 0; i < self.item.pictureArray.count; i++) {
         
     }
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offset, 0, 100, 100)];
-    btn.backgroundColor = WTColorHex(0xFAFAF7);
-    btn.layer.borderColor = WTColorHex(0xECECE6).CGColor;
-    btn.layer.borderWidth = 1;
-    [btn setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(btnPress) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:btn];
+    if (self.item.pictureArray.count<3) {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offset, 0, 100, 100)];
+        btn.backgroundColor = WTColorHex(0xFAFAF7);
+        btn.layer.borderColor = WTColorHex(0xECECE6).CGColor;
+        btn.layer.borderWidth = 1;
+        [btn setImage:[UIImage imageNamed:@"camera_icon"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(btnPress) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:btn];
+    }
 }
 
 - (void)btnPress {
